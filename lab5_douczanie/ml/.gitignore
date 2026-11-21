@@ -1,0 +1,5 @@
+.venv/
+__pycache__/
+model.tflite
+model_l4.keras
+normalizacja.npz
