@@ -1,0 +1,3 @@
+# Pliki brokera zawsze z końcami linii LF (bash i Mosquitto nie znoszą CRLF z Windows).
+# Ten plik kopiujesz razem z resztą broker/ do swojego repozytorium.
+* text eol=lf
