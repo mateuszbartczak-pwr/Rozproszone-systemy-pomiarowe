@@ -1,0 +1,6 @@
+# Laboratorium 6: dopisz do .gitignore w katalogu głównym repozytorium
+broker/certs/
+broker/passwd
+broker/uzytkownicy
+esp32/include/ca_cert.h
+esp32/include/secrets.h

@@ -1,0 +1,8 @@
+# Konta brokera: login:hasło w każdej linii. Skopiuj jako "uzytkownicy" (plik w .gitignore) i zmień hasła.
+# broker/przygotuj.sh zamienia ten plik na passwd ze skrótami haseł.
+ingestor:zmien-haslo-ingestora
+operator:zmien-haslo-operatora
+# login ESP32 = device_id wypisywany przez firmware po starcie (esp32-xxxxxxxx)
+esp32-a1b2c3d4:zmien-haslo-esp32
+# symulator czujnika z repozytorium startowego L3 (jeśli go używasz)
+esp32-sim01:zmien-haslo-symulatora

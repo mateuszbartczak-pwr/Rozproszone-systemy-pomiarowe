@@ -1,0 +1,5 @@
+# Laboratorium 6: skrypt i pliki brokera zawsze z końcami linii LF (bash i Mosquitto nie znoszą CRLF z Windows)
+*.sh          text eol=lf
+broker/acl    text eol=lf
+broker/*.conf text eol=lf
+broker/uzytkownicy* text eol=lf

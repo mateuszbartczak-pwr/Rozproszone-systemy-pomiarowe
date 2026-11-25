@@ -1,0 +1,21 @@
+# Laboratorium 6: zmiany w docker-compose.yml Twojego repozytorium (usługi broker i ingestor).
+# Pozostałe usługi bez zmian.
+services:
+  broker:
+    build:
+      context: ./broker
+      dockerfile: Dockerfile
+    ports:
+      - 8883:8883            # TLS dla ESP32 i MQTT Explorer
+      # - 1883:1883          # awaryjnie (ESP32 z TRYB_TLS 0) -- odkomentuj tylko, gdy certyfikat nie działa
+    volumes:                 # konfiguracja, hasła i certyfikaty z dysku, tylko do odczytu -- nie w obrazie
+      - ./broker/mosquitto.conf:/mosquitto/config/mosquitto.conf:ro
+      - ./broker/acl:/mosquitto/config/acl:ro
+      - ./broker/passwd:/mosquitto/config/passwd:ro
+      - ./broker/certs:/mosquitto/certs:ro
+    image: broker:v1
+    container_name: broker
+
+  ingestor:
+    # ... bez zmian (build, depends_on, restart z Laboratorium 3) ...
+    env_file: .env           # MQTT_USER i MQTT_PASSWORD dopisane do .env

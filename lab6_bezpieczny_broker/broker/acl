@@ -1,0 +1,14 @@
+# Laboratorium 6: lista kontroli dostępu -- zasada najmniejszych uprawnień.
+# %u = login klienta. Wpisy "pattern" dotyczą wszystkich kont, wpisy "topic" -- konta z ostatniej linii "user".
+
+# Urządzenia (login = device_id): publikują tylko pod własnym device_id, w dowolnej grupie (pomiary i status/LWT).
+pattern write lab/+/%u/#
+
+# Ingestor: tylko odczyt pomiarów
+user ingestor
+topic read lab/#
+
+# Operator (MQTT Explorer, diagnostyka): odczyt pomiarów i statystyk brokera
+user operator
+topic read lab/#
+topic read $SYS/#
